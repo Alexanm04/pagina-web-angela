@@ -289,13 +289,25 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-      <iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="640" height="480" allow="autoplay"></iframe>
+      <!--<iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="640" height="480" allow="autoplay"></iframe>
       <iframe src="https://drive.google.com/file/d/1PLu-1Gcla1r8Ea8e4sMSYXg8YukjM27u/preview" width="640" height="480" allow="autoplay"></iframe>
       <iframe src="https://drive.google.com/file/d/1_sy_sAMLyueoRNdBtb8mDtylzTYtnxC5/preview" width="640" height="480" allow="autoplay"></iframe>
-      <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="640" height="480" allow="autoplay"></iframe>-->
+      <video controls>
+        <source src="MES1.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="CUMPLEAÑOS ANGELA.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="Video en saiko.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video4.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
-
+   
   <div class="spacer"></div>
 
   <!-- Carrusel de Fotos -->
@@ -309,35 +321,81 @@
     </div>
   </section>
 
+  <audio id="background-music" src="Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3" loop></audio>
+  
   <script>
     window.onload = function () {
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
-      //BORRAR DESPUES PARA EL REGISTRO
-      /*const errorMessage = document.getElementById('error-message');
-      const navbar = document.querySelector('.navbar');
-      const banner = document.getElementById('banner');
-      const videos = document.getElementById('videos');
-      const fotos = document.getElementById('fotos');
-      const carouselItems = document.querySelectorAll('.carousel-container');*/
+      const backgroundMusic = document.getElementById('background-music'); // Referencia al audio
+      //const iframes = document.querySelectorAll('iframe');
+      const videos=document.querySelectorAll('.carousel-container video');
+      backgroundMusic.volume = 0.6;
+      
       setTimeout(() => {
         animationContainer.style.display = 'none';
         verificationModal.style.display = 'flex';
-      navbar.style.opacity = 1;
-        navbar.style.visibility = 'visible';
-        banner.style.opacity = 1;
-        banner.style.visibility = 'visible';
-        videos.style.opacity = 1;
-        videos.style.visibility = 'visible';
-        fotos.style.opacity = 1;
-        fotos.style.visibility = 'visible';
-        carouselItems.forEach((item) => {
-          item.style.opacity = 1;
-          item.style.visibility = 'visible';
-        });
-        errorMessage.style.display = 'none';
       }, 4000);
-    };
+      /*
+      // Pausar la música cuando se haga clic en cualquier iframe
+      iframes.forEach((iframe) => {
+        iframe.addEventListener('mouseenter', () => {
+          // Pausar música cuando el mouse entra en el iframe
+          if (!backgroundMusic.paused) {
+            backgroundMusic.pause();
+          }
+        });
+  
+        iframe.addEventListener('mouseleave', () => {
+          // Reanudar música cuando el mouse sale del iframe
+          if (backgroundMusic.paused) {
+            backgroundMusic.play().catch((error) => {
+              console.log('Error al reanudar la música:', error);
+            });
+          }
+        });
+      });
+    };*/
+    document.addEventListener('keydown', function (event) {
+      // Verifica si la tecla es Pause/Break
+      if (event.code === 'Pause') {
+        // Pausa o reproduce la música
+        if (!backgroundMusic.paused) {
+          backgroundMusic.pause();
+          console.log("Música pausada.");
+        } else {
+          backgroundMusic.play().catch((error) => {
+            console.error("Error al reproducir la música:", error);
+          });
+          console.log("Música reanudada.");
+        }
+      }
+    });
+
+    videos.forEach((video) => {
+    // Pausar la música al reproducir un video
+    video.addEventListener('play', () => {
+      if (!backgroundMusic.paused) {
+        backgroundMusic.pause();
+      }
+    });
+      // Reanudar la música al pausar o finalizar un video
+      video.addEventListener('pause', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().catch((error) => {
+          console.log('Error al reanudar la música:', error);
+        });
+      }
+    });
+    video.addEventListener('ended', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().catch((error) => {
+          console.log('Error al reanudar la música:', error);
+        });
+      }
+    });
+  });
+};
   
     function verifyPassword() {
       const day = document.getElementById('day').value;
@@ -350,6 +408,7 @@
       const videos = document.getElementById('videos');
       const fotos = document.getElementById('fotos');
       const carouselItems = document.querySelectorAll('.carousel-container');
+      const backgroundMusic = document.getElementById('background-music');
   
       if (day === '14' && month === '02' && year === '2023') {
         verificationModal.style.display = 'none';
@@ -369,8 +428,11 @@
       } else {
         errorMessage.style.display = 'block';
       }
+      backgroundMusic.play().catch((error) => {
+        console.error('Error al reproducir la música:', error);
+      });
     }
-
+  
     function scrollToSection(id) {
       const section = document.getElementById(id);
       if (section) {
@@ -378,5 +440,7 @@
       }
     }
   </script>
+  
+  
 </body>
 </html>
