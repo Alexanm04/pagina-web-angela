@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Angelita 🩵</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      overflow-y: scroll;
+    }
+
+    /* Menú */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 0s 1s;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00aaff;
+      margin-right: 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin-left: 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .navbar ul li a:hover {
+      color: #00aaff;
+    }
+
+    /* Animación Inicial */
+    #animation-container {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      background-color: black;
+    }
+
+    .heart-symbol {
+      font-size: 10rem;
+      color: #00aaff;
+      opacity: 0;
+      filter: blur(10px);
+      animation: logoAnimation 4s ease-in-out forwards;
+    }
+
+    @keyframes logoAnimation {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+        filter: blur(20px);
+      }
+      25% {
+        transform: scale(1.5);
+        opacity: 0.5;
+        filter: blur(15px);
+      }
+      50% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+      75% {
+        transform: scale(1.2);
+        opacity: 0.8;
+        filter: blur(5px);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    /* Banner */
+    .banner {
+  position: relative; /* Necesario para que el texto se posicione respecto al contenedor */
+  height: 60vh; /* Ajusta la altura del banner */
+  background-image: url('/Users/Alex/Downloads/PRUEBAS\ ANGELA/banner2.jpg'); /* Imagen como fondo */
+  background-size: cover; /* Asegura que la imagen ocupe todo el contenedor sin deformarse */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s 1s;
+  color: white; /* Asegura que el texto sea visible */
+}
+
+.banner h1 {
+  font-size: 3rem;
+ /* background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mayor legibilidad */
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  /*background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+
+    /* Carrusel */
+    .carousel {
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 0s 1s;
+    }
+
+    .carousel h2 {
+      margin-left: 20px;
+      color: #00aaff;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px;
+    }
+
+    .carousel-container img {
+      width: 200px;
+      height: 120px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .carousel-container img:hover {
+      transform: scale(1.1);
+    }
+
+    .carousel-container video {
+      width: 300px;
+      height: auto;
+      margin-right: 10px;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .carousel-container video:hover {
+      transform: scale(1.1);
+    }
+
+    /* Modal de verificación */
+    #verification-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #verification-modal .modal-content {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      color: white;
+    }
+
+    #verification-modal input {
+      width: 60px;
+      padding: 10px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    #verification-modal button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00aaff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #verification-modal button:hover {
+      background-color: #007acc;
+    }
+
+    /* Estilo para todo el contenido que empieza oculto */
+    #banner, #videos, #fotos, .carousel-container{
+      visibility: hidden;
+      opacity: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Animación Inicial -->
+  <div id="animation-container">
+    <div class="heart-symbol">🩵</div>
+  </div>
+
+  <!--<div id="verification-modal">
+    <div class="modal-content">
+      <h2>Verificación</h2>
+      <p>Por favor, ingresa la contraseña para continuar:</p>
+      <div>
+        <input type="number" id="day" placeholder="DD" maxlength="2" />
+        <input type="number" id="month" placeholder="MM" maxlength="2" />
+        <input type="number" id="year" placeholder="AAAA" maxlength="4" />
+      </div>
+      <button onclick="verifyPassword()">Continuar</button>
+      <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.</p>
+    </div>
+  </div> -->
+
+  <!-- Menú -->
+  <div class="navbar">
+    <div class="logo">Angelita 🩵</div>
+    <ul>
+      <li><a onclick="scrollToSection('videos')">Videos</a></li>
+      <li><a onclick="scrollToSection('fotos')">Fotos</a></li>
+      <li><a onclick="scrollToSection('banner')">Inicio</a></li>
+    </ul>
+  </div>
+
+  <!-- Banner -->
+  <div id="banner" class="banner">
+    <div>
+      <h1>Bienvenida, Angelita 🩵</h1>
+      <p>Explora tus recuerdos favoritos aquí</p>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Carrusel de Videos -->
+  <section id="videos" class="carousel">
+    <h2>Videos destacados</h2>
+    <div class="carousel-container">
+      <video src="MES1.mp4" controls></video>
+      <video src="CUMPLEAÑOS ANGELA.mp4" controls></video>
+      <video src="Video en saiko.mp4" controls></video>
+      <video src="video4.mp4" controls></video>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- Carrusel de Fotos -->
+  <section id="fotos" class="carousel">
+    <h2>Fotos destacadas</h2>
+    <div class="carousel-container">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+    </div>
+  </section>
+
+  <script>
+    window.onload = function () {
+      const animationContainer = document.getElementById('animation-container');
+      const verificationModal = document.getElementById('verification-modal');
+      //BORRAR DESPUES PARA EL REGISTRO
+      const errorMessage = document.getElementById('error-message');
+      const navbar = document.querySelector('.navbar');
+      const banner = document.getElementById('banner');
+      const videos = document.getElementById('videos');
+      const fotos = document.getElementById('fotos');
+      const carouselItems = document.querySelectorAll('.carousel-container');
+      setTimeout(() => {
+        animationContainer.style.display = 'none';
+      //  verificationModal.style.display = 'flex';
+      navbar.style.opacity = 1;
+        navbar.style.visibility = 'visible';
+        banner.style.opacity = 1;
+        banner.style.visibility = 'visible';
+        videos.style.opacity = 1;
+        videos.style.visibility = 'visible';
+        fotos.style.opacity = 1;
+        fotos.style.visibility = 'visible';
+        carouselItems.forEach((item) => {
+          item.style.opacity = 1;
+          item.style.visibility = 'visible';
+        });
+        errorMessage.style.display = 'none';
+      }, 4000);
+    };
+  
+    function verifyPassword() {
+      const day = document.getElementById('day').value;
+      const month = document.getElementById('month').value;
+      const year = document.getElementById('year').value;
+      const errorMessage = document.getElementById('error-message');
+      const verificationModal = document.getElementById('verification-modal');
+      const navbar = document.querySelector('.navbar');
+      const banner = document.getElementById('banner');
+      const videos = document.getElementById('videos');
+      const fotos = document.getElementById('fotos');
+      const carouselItems = document.querySelectorAll('.carousel-container');
+  
+      //if (day === '14' && month === '02' && year === '2023') {
+      //  verificationModal.style.display = 'none';
+        navbar.style.opacity = 1;
+        navbar.style.visibility = 'visible';
+        banner.style.opacity = 1;
+        banner.style.visibility = 'visible';
+        videos.style.opacity = 1;
+        videos.style.visibility = 'visible';
+        fotos.style.opacity = 1;
+        fotos.style.visibility = 'visible';
+        carouselItems.forEach((item) => {
+          item.style.opacity = 1;
+          item.style.visibility = 'visible';
+        });
+        errorMessage.style.display = 'none';
+     // } else {
+        //errorMessage.style.display = 'block';
+     // }
+    }
+
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
