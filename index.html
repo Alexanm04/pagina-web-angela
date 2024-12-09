@@ -321,9 +321,39 @@
     </div>
   </section>
 
-  <audio id="background-music" src="Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3" loop></audio>
+  <audio id="background-music" src="" autoplay></audio>
   
   <script>
+
+    const playlist = [
+    "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
+    "rauw.mp3",
+    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3"  
+     ];
+
+    let currentSongIndex = 0; // Índice de la canción actual
+    const backgroundMusic = document.getElementById('background-music'); // Referencia al audio
+      // Función para reproducir la canción actual
+  function playCurrentSong() {
+    if (currentSongIndex < playlist.length) {
+      backgroundMusic.src = playlist[currentSongIndex];
+      bac.play()
+        .then(() => console.log("Reproduciendo:", playlist[currentSongIndex]))
+        .catch(error => console.error("Error al reproducir:", error));
+    } else {
+      console.log("Playlist terminada.");
+    }
+  }
+
+    // Evento para reproducir la siguiente canción al terminar la actual
+    backgroundMusic.addEventListener('ended', () => {
+    currentSongIndex++;
+    if (currentSongIndex < playlist.length) {
+      playCurrentSong();
+    } else {
+      console.log("Playlist completada.");
+    }
+  });
     window.onload = function () {
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
@@ -425,12 +455,12 @@
           item.style.visibility = 'visible';
         });
         errorMessage.style.display = 'none';
+        currentSongIndex=0;
+        playCurrentSong();
       } else {
         errorMessage.style.display = 'block';
       }
-      backgroundMusic.play().catch((error) => {
-        console.error('Error al reproducir la música:', error);
-      });
+      
     }
   
     function scrollToSection(id) {
