@@ -251,7 +251,7 @@
     <div class="heart-symbol">🩵</div>
   </div>
 
-  <!--<div id="verification-modal">
+  <div id="verification-modal">
     <div class="modal-content">
       <h2>Verificación</h2>
       <p>Por favor, ingresa la contraseña para continuar:</p>
@@ -263,7 +263,7 @@
       <button onclick="verifyPassword()">Continuar</button>
       <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.</p>
     </div>
-  </div> -->
+  </div> 
 
   <!-- Menú -->
   <div class="navbar">
@@ -289,10 +289,10 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-      <video src="MES1.mp4" controls></video>
-      <video src="CUMPLEAÑOS ANGELA.mp4" controls></video>
-      <video src="Video en saiko.mp4" controls></video>
-      <video src="video4.mp4" controls></video>
+      <iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1PLu-1Gcla1r8Ea8e4sMSYXg8YukjM27u/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1_sy_sAMLyueoRNdBtb8mDtylzTYtnxC5/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="640" height="480" allow="autoplay"></iframe>
     </div>
   </section>
 
@@ -314,15 +314,15 @@
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
       //BORRAR DESPUES PARA EL REGISTRO
-      const errorMessage = document.getElementById('error-message');
+      /*const errorMessage = document.getElementById('error-message');
       const navbar = document.querySelector('.navbar');
       const banner = document.getElementById('banner');
       const videos = document.getElementById('videos');
       const fotos = document.getElementById('fotos');
-      const carouselItems = document.querySelectorAll('.carousel-container');
+      const carouselItems = document.querySelectorAll('.carousel-container');*/
       setTimeout(() => {
         animationContainer.style.display = 'none';
-      //  verificationModal.style.display = 'flex';
+        verificationModal.style.display = 'flex';
       navbar.style.opacity = 1;
         navbar.style.visibility = 'visible';
         banner.style.opacity = 1;
@@ -351,8 +351,8 @@
       const fotos = document.getElementById('fotos');
       const carouselItems = document.querySelectorAll('.carousel-container');
   
-      //if (day === '14' && month === '02' && year === '2023') {
-      //  verificationModal.style.display = 'none';
+      if (day === '14' && month === '02' && year === '2023') {
+        verificationModal.style.display = 'none';
         navbar.style.opacity = 1;
         navbar.style.visibility = 'visible';
         banner.style.opacity = 1;
@@ -366,9 +366,9 @@
           item.style.visibility = 'visible';
         });
         errorMessage.style.display = 'none';
-     // } else {
-        //errorMessage.style.display = 'block';
-     // }
+      } else {
+        errorMessage.style.display = 'block';
+      }
     }
 
     function scrollToSection(id) {
