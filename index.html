@@ -111,7 +111,7 @@
     .banner {
   position: relative; /* Necesario para que el texto se posicione respecto al contenedor */
   height: 60vh; /* Ajusta la altura del banner */
-  background-image: url('/Users/Alex/Downloads/PRUEBAS\ ANGELA/banner2.jpg'); /* Imagen como fondo */
+  background-image: url(banner2.jpg); /* Imagen como fondo */
   background-size: cover; /* Asegura que la imagen ocupe todo el contenedor sin deformarse */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -251,7 +251,7 @@
     <div class="heart-symbol">🩵</div>
   </div>
 
-  <!--<div id="verification-modal">
+  <div id="verification-modal">
     <div class="modal-content">
       <h2>Verificación</h2>
       <p>Por favor, ingresa la contraseña para continuar:</p>
@@ -263,7 +263,7 @@
       <button onclick="verifyPassword()">Continuar</button>
       <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.</p>
     </div>
-  </div> -->
+  </div> 
 
   <!-- Menú -->
   <div class="navbar">
@@ -289,13 +289,25 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-      <video src="MES1.mp4" controls></video>
-      <video src="CUMPLEAÑOS ANGELA.mp4" controls></video>
-      <video src="Video en saiko.mp4" controls></video>
-      <video src="video4.mp4" controls></video>
+      <!--<iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1PLu-1Gcla1r8Ea8e4sMSYXg8YukjM27u/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1_sy_sAMLyueoRNdBtb8mDtylzTYtnxC5/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="640" height="480" allow="autoplay"></iframe>-->
+      <video controls>
+        <source src="MES1.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="CUMPLEAÑOS ANGELA.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="Video en saiko.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video4.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
-
+   
   <div class="spacer"></div>
 
   <!-- Carrusel de Fotos -->
@@ -309,35 +321,111 @@
     </div>
   </section>
 
+  <audio id="background-music" src="" autoplay></audio>
+  
   <script>
+
+    const playlist = [
+    "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
+    "rauw.mp3",
+    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3"  
+     ];
+
+    let currentSongIndex = 0; // Índice de la canción actual
+    const backgroundMusic = document.getElementById('background-music'); // Referencia al audio
+      // Función para reproducir la canción actual
+  function playCurrentSong() {
+    if (currentSongIndex < playlist.length) {
+      backgroundMusic.src = playlist[currentSongIndex];
+      bac.play()
+        .then(() => console.log("Reproduciendo:", playlist[currentSongIndex]))
+        .catch(error => console.error("Error al reproducir:", error));
+    } else {
+      console.log("Playlist terminada.");
+    }
+  }
+
+    // Evento para reproducir la siguiente canción al terminar la actual
+    backgroundMusic.addEventListener('ended', () => {
+    currentSongIndex++;
+    if (currentSongIndex < playlist.length) {
+      playCurrentSong();
+    } else {
+      console.log("Playlist completada.");
+    }
+  });
     window.onload = function () {
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
-      //BORRAR DESPUES PARA EL REGISTRO
-      const errorMessage = document.getElementById('error-message');
-      const navbar = document.querySelector('.navbar');
-      const banner = document.getElementById('banner');
-      const videos = document.getElementById('videos');
-      const fotos = document.getElementById('fotos');
-      const carouselItems = document.querySelectorAll('.carousel-container');
+      const backgroundMusic = document.getElementById('background-music'); // Referencia al audio
+      //const iframes = document.querySelectorAll('iframe');
+      const videos=document.querySelectorAll('.carousel-container video');
+      backgroundMusic.volume = 0.6;
+      
       setTimeout(() => {
         animationContainer.style.display = 'none';
-      //  verificationModal.style.display = 'flex';
-      navbar.style.opacity = 1;
-        navbar.style.visibility = 'visible';
-        banner.style.opacity = 1;
-        banner.style.visibility = 'visible';
-        videos.style.opacity = 1;
-        videos.style.visibility = 'visible';
-        fotos.style.opacity = 1;
-        fotos.style.visibility = 'visible';
-        carouselItems.forEach((item) => {
-          item.style.opacity = 1;
-          item.style.visibility = 'visible';
-        });
-        errorMessage.style.display = 'none';
+        verificationModal.style.display = 'flex';
       }, 4000);
-    };
+      /*
+      // Pausar la música cuando se haga clic en cualquier iframe
+      iframes.forEach((iframe) => {
+        iframe.addEventListener('mouseenter', () => {
+          // Pausar música cuando el mouse entra en el iframe
+          if (!backgroundMusic.paused) {
+            backgroundMusic.pause();
+          }
+        });
+  
+        iframe.addEventListener('mouseleave', () => {
+          // Reanudar música cuando el mouse sale del iframe
+          if (backgroundMusic.paused) {
+            backgroundMusic.play().catch((error) => {
+              console.log('Error al reanudar la música:', error);
+            });
+          }
+        });
+      });
+    };*/
+    document.addEventListener('keydown', function (event) {
+      // Verifica si la tecla es Pause/Break
+      if (event.code === 'Pause') {
+        // Pausa o reproduce la música
+        if (!backgroundMusic.paused) {
+          backgroundMusic.pause();
+          console.log("Música pausada.");
+        } else {
+          backgroundMusic.play().catch((error) => {
+            console.error("Error al reproducir la música:", error);
+          });
+          console.log("Música reanudada.");
+        }
+      }
+    });
+
+    videos.forEach((video) => {
+    // Pausar la música al reproducir un video
+    video.addEventListener('play', () => {
+      if (!backgroundMusic.paused) {
+        backgroundMusic.pause();
+      }
+    });
+      // Reanudar la música al pausar o finalizar un video
+      video.addEventListener('pause', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().catch((error) => {
+          console.log('Error al reanudar la música:', error);
+        });
+      }
+    });
+    video.addEventListener('ended', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().catch((error) => {
+          console.log('Error al reanudar la música:', error);
+        });
+      }
+    });
+  });
+};
   
     function verifyPassword() {
       const day = document.getElementById('day').value;
@@ -350,9 +438,10 @@
       const videos = document.getElementById('videos');
       const fotos = document.getElementById('fotos');
       const carouselItems = document.querySelectorAll('.carousel-container');
+      const backgroundMusic = document.getElementById('background-music');
   
-      //if (day === '14' && month === '02' && year === '2023') {
-      //  verificationModal.style.display = 'none';
+      if (day === '14' && month === '02' && year === '2023') {
+        verificationModal.style.display = 'none';
         navbar.style.opacity = 1;
         navbar.style.visibility = 'visible';
         banner.style.opacity = 1;
@@ -366,11 +455,14 @@
           item.style.visibility = 'visible';
         });
         errorMessage.style.display = 'none';
-     // } else {
-        //errorMessage.style.display = 'block';
-     // }
+        currentSongIndex=0;
+        playCurrentSong();
+      } else {
+        errorMessage.style.display = 'block';
+      }
+      
     }
-
+  
     function scrollToSection(id) {
       const section = document.getElementById(id);
       if (section) {
@@ -378,5 +470,7 @@
       }
     }
   </script>
+  
+  
 </body>
 </html>
