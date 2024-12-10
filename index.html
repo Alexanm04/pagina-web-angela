@@ -151,30 +151,78 @@
       transition: opacity 1s ease, visibility 0s 1s;
     }
 
+    .album-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  margin-top: 30px;
+}
+
+.year button, .month button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  text-align: left;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.year button:hover, .month button:hover {
+  background-color: #555;
+}
+.month-container {
+  margin-left: 20px;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.photo-container img:hover {
+  transform: scale(1.1);
+}
+
     .carousel h2 {
       margin-left: 20px;
       color: #00aaff;
     }
 
-    .carousel-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 20px;
-    }
+/* Carrusel de imágenes */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
 
-    .carousel-container img {
-      width: 200px;
-      height: 120px;
-      margin-right: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+.carousel-container img {
+  width: 300px;  /* Tamaño de las imágenes similar a los videos */
+  height: auto;   /* Mantiene la proporción de la imagen */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 
-    .carousel-container img:hover {
-      transform: scale(1.1);
-    }
+.carousel-container img:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
 
     .carousel-container video {
       width: 300px;
@@ -242,6 +290,69 @@
       visibility: hidden;
       opacity: 0;
     }
+    /* Estilos para el modal */
+    .modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+  width: 100%;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #f1f1f1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.next {
+  right: 10px;
+  transform: translateY(-50%);
+}
 
   </style>
 </head>
@@ -289,25 +400,6 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-      <!--<iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="640" height="480" allow="autoplay"></iframe>
-      <iframe src="https://drive.google.com/file/d/1PLu-1Gcla1r8Ea8e4sMSYXg8YukjM27u/preview" width="640" height="480" allow="autoplay"></iframe>
-      <iframe src="https://drive.google.com/file/d/1_sy_sAMLyueoRNdBtb8mDtylzTYtnxC5/preview" width="640" height="480" allow="autoplay"></iframe>
-      <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="640" height="480" allow="autoplay"></iframe>
-      <video controls>
-        <source src="MES1.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="CUMPLEAÑOS ANGELA.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="Video en saiko.mp4" type="video/mp4">
-      </video>
-      <video controls>
-        <source src="video4.mp4" type="video/mp4">
-      </video>
-      <video controls width="640" height="480">
-        <source src="https://drive.google.com/uc?export=download&id=1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.-->
         <video controls>
           <source src="https://www.dropbox.com/scl/fi/yvyqsgm4dlmcod5f1w0kh/MES1.mp4?rlkey=etunq90eep14zpvhj65dypw89&st=cmaljwxe&raw=1" type="video/mp4">
           Tu navegador no soporta el elemento de video.
@@ -324,40 +416,204 @@
     <source src="https://www.dropbox.com/scl/fi/ufozne9adx1l9iyjpikuo/video4.mp4?rlkey=pder6e6mstpyhm34wt3zzcyp9&st=js6ebpv4&raw=1" type="video/mp4">
     Tu navegador no soporta el elemento de video.
 </video>
-            
+<video controls>
+  <source src="https://www.dropbox.com/scl/fi/muau7d6v0yoah5r3fgjcw/video5.mp4?rlkey=4pbts7adtqc73se81u9zkr2pw&st=9liwmet3&raw=1" type="video/mp4">
+  Tu navegador no soporta el elemento de video.
+</video>
+<video controls>
+  <source src="https://www.dropbox.com/scl/fi/xekwxcdgqbmssfqkkgklx/video6.mp4?rlkey=v6196hb2yhe0jpu9bwxr5v294&st=lxyuaij4&raw=1" type="video/mp4">
+  Tu navegador no soporta el elemento de video.
+</video>       
       </video>
-      
-      
     </div>
   </section>
 
   <div class="spacer"></div>
 
-  <!-- Carrusel de Fotos -->
   <section id="fotos" class="carousel">
     <h2>Fotos destacadas</h2>
-    <div class="carousel-container">
-      <img src="foto1.jpg" alt="Foto 1">
-      <img src="foto2.jpg" alt="Foto 2">
-      <img src="foto3.jpg" alt="Foto 3">
-      <img src="foto4.jpg" alt="Foto 4">
+    <div class="album-container">
+      <!-- Año 2023 -->
+      <div class="year">
+        <button class="toggle-year" onclick="toggleVisibility('year2023')">2023</button>
+        <div class="month-container" id="year2023" style="display: none;">
+          <div class="month">
+            <button class="toggle-month" onclick="toggleVisibility('december2023')">Diciembre</button>
+            <div class="photo-container" id="december2023" style="display: none;">
+              <div class="carousel-container">
+                <img src="d123.jpg" alt="Foto 1 diciembre 2023" class="photo" onclick="openModal(this)">
+                <img src="d223.jpg" alt="Foto 2 diciembre 2023" class="photo" onclick="openModal(this)">
+                <img src="d323.jpg" alt="Foto 3 diciembre 2023" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Año 2024 -->
+      <div class="year">
+        <button class="toggle-year" onclick="toggleVisibility('year2024')">2024</button>
+        <div class="month-container" id="year2024" style="display: none;">
+          <div class="month">
+            <button class="toggle-month" onclick="toggleVisibility('january2024')">Enero</button>
+            <div class="photo-container" id="january2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="e124.jpg" alt="Foto 1 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e224.jpg" alt="Foto 2 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e324.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e424.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e524.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e624.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e724.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e824.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e924.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e1024.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e1124.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e1224.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e1324.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <img src="e1424.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('february2024')">Febrero</button>
+            <div class="photo-container" id="february2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 febrero 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 febrero 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 febrero 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('march2024')">Marzo</button>
+            <div class="photo-container" id="march2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 marzo 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 marzo 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 marzo 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('april2024')">Abril</button>
+            <div class="photo-container" id="april2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 abril 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 abril 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 abril 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('may2024')">Mayo</button>
+            <div class="photo-container" id="may2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 mayo 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 mayo 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 mayo 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('june2024')">Junio</button>
+            <div class="photo-container" id="june2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 junio 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 junio 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 junio 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('july2024')">Julio</button>
+            <div class="photo-container" id="july2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_enero2024.jpg" alt="Foto 1 julio 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_enero2024.jpg" alt="Foto 2 julio 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_enero2024.jpg" alt="Foto 3 julio 2024" class="photo" onclick="openModal(this)">
+              </div>
+      
+            <button class="toggle-month" onclick="toggleVisibility('august2024')">Agosto</button>
+            <div class="photo-container" id="august2024" style="display: none;">
+              <div class="carousel-container">
+                <img src="foto1_agosto2024.jpg" alt="Foto 1 agosto 2024" class="photo" onclick="openModal(this)">
+                <img src="foto2_agosto2024.jpg" alt="Foto 2 agosto 2024" class="photo" onclick="openModal(this)">
+                <img src="foto3_agosto2024.jpg" alt="Foto 3 agosto 2024" class="photo" onclick="openModal(this)">
+              </div>
+            </div>
+            <button class="toggle-month" onclick="toggleVisibility('september2024')">Septiembre</button>
+          <div class="photo-container" id="september2024" style="display: none;">
+            <div class="carousel-container">
+              <img src="foto1_septiembre2024.jpg" alt="Foto 1 septiembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto2_septiembre2024.jpg" alt="Foto 2 septiembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto3_septiembre2024.jpg" alt="Foto 3 septiembre 2024" class="photo" onclick="openModal(this)">
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('october2024')">Octubre</button>
+          <div class="photo-container" id="october2024" style="display: none;">
+            <div class="carousel-container">
+              <img src="foto1_octubre2024.jpg" alt="Foto 1 octubre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto2_octubre2024.jpg" alt="Foto 2 octubre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto3_octubre2024.jpg" alt="Foto 3 octubre 2024" class="photo" onclick="openModal(this)">
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('november2024')">Noviembre</button>
+          <div class="photo-container" id="november2024" style="display: none;">
+            <div class="carousel-container">
+              <img src="foto1_noviembre2024.jpg" alt="Foto 1 noviembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto2_noviembre2024.jpg" alt="Foto 2 noviembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto3_noviembre2024.jpg" alt="Foto 3 noviembre 2024" class="photo" onclick="openModal(this)">
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('december2024')">Diciembre</button>
+          <div class="photo-container" id="december2024" style="display: none;">
+            <div class="carousel-container">
+              <img src="foto1_diciembre2024.jpg" alt="Foto 1 diciembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto2_diciembre2024.jpg" alt="Foto 2 diciembre 2024" class="photo" onclick="openModal(this)">
+              <img src="foto3_diciembre2024.jpg" alt="Foto 3 diciembre 2024" class="photo" onclick="openModal(this)">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  
+  <!-- Modal para la foto a pantalla completa -->
+  <div id="photoModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">X</span>
+    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+    <img class="modal-content" id="modalImage">
+    <button class="next" onclick="changeImage(1)">&#10095;</button>
+  </div>
 
   <audio id="background-music" src="" autoplay></audio>
   
   <script>
+    let images=[];
+    let currentIndex=0;
+  // Función para abrir la imagen en pantalla completa
+  function openModal(imgElement) {
+  // Obtener todas las imágenes dentro del mismo contenedor
+  images = Array.from(imgElement.closest('.photo-container').getElementsByTagName('img'));
+  
+  // Mostrar el modal y la imagen seleccionada
+  currentImageIndex = images.indexOf(imgElement);
+  document.getElementById('modalImage').src = images[currentImageIndex].src;
+  document.getElementById('photoModal').style.display = 'flex';
+}
 
-  // Esta función se llama cuando el estado del reproductor cambia (reproducción, pausa, etc.)
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING) {
-      console.log('El vídeo está reproduciéndose');
-      // Aquí puedes pausar la música u otras acciones
-    } else if (event.data == YT.PlayerState.PAUSED) {
-      console.log('El vídeo está en pausa');
-      // Aquí puedes reanudar la música o realizar otras acciones
-    }
-  }
+// Función para cerrar el modal
+function closeModal() {
+  // Ocultar el modal
+  document.getElementById('photoModal').style.display = 'none';
+}
+
+// Función para cambiar de imagen (anterior o siguiente)
+function changeImage(direction, event) {
+  // Evitar que el clic en las flechas cierre el modal
+  event.stopPropagation();
+  
+  // Cambiar el índice de la imagen actual
+  currentImageIndex += direction;
+
+  // Asegurarse de que no nos salgamos de los límites del arreglo de imágenes
+  if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+  if (currentImageIndex >= images.length) currentImageIndex = 0;
+
+  // Actualizar la imagen mostrada en el modal
+  document.getElementById('modalImage').src = images[currentImageIndex].src;
+}
+
     const playlist = [
     "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
     "rauw.mp3",
@@ -377,7 +633,15 @@
       console.log("Playlist terminada.");
     }
   }
-
+    // Función para alternar la visibilidad de un año o mes
+  function toggleVisibility(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === "none" || element.style.display === "") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
     // Evento para reproducir la siguiente canción al terminar la actual
     backgroundMusic.addEventListener('ended', () => {
     currentSongIndex++;
@@ -399,26 +663,6 @@
         animationContainer.style.display = 'none';
         verificationModal.style.display = 'flex';
       }, 4000);
-      /*
-      // Pausar la música cuando se haga clic en cualquier iframe
-      iframes.forEach((iframe) => {
-        iframe.addEventListener('mouseenter', () => {
-          // Pausar música cuando el mouse entra en el iframe
-          if (!backgroundMusic.paused) {
-            backgroundMusic.pause();
-          }
-        });
-  
-        iframe.addEventListener('mouseleave', () => {
-          // Reanudar música cuando el mouse sale del iframe
-          if (backgroundMusic.paused) {
-            backgroundMusic.play().catch((error) => {
-              console.log('Error al reanudar la música:', error);
-            });
-          }
-        });
-      });
-    };*/
     document.addEventListener('keydown', function (event) {
       // Verifica si la tecla es Pause/Break
       if (event.code === 'Pause') {
