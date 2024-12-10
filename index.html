@@ -309,23 +309,28 @@
         <source src="https://drive.google.com/uc?export=download&id=1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr" type="video/mp4">
         Tu navegador no soporta la etiqueta de video.-->
         <video controls>
-          <source src="MES1.mp4" type="video/mp4">
-        </video>
-        <video controls>
-          <source src="CUMPLEAÑOS ANGELA.mp4" type="video/mp4">
-        </video>
-        <video controls>
-          <source src="Video en saiko.mp4" type="video/mp4">
-        </video>
-        <video controls>
-          <source src="video4_compressed.mp4" type="video/mp4">
-        </video>
+          <source src="https://www.dropbox.com/scl/fi/yvyqsgm4dlmcod5f1w0kh/MES1.mp4?rlkey=etunq90eep14zpvhj65dypw89&st=cmaljwxe&raw=1" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+      </video>
+      <video controls>
+        <source src="https://www.dropbox.com/scl/fi/kt714aijpxk0hk4mkv980/Video-en-saiko.mp4?rlkey=3fqz39vd6kbpxpmk8rjipr2i2&st=qbgu0q6b&raw=1" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <video controls>
+      <source src="https://www.dropbox.com/scl/fi/voqr162cwh6ajatphuz8b/CUMPLEA-OS-ANGELA.mp4?rlkey=uymcyhg6fzrd3hdbibc7cqfmm&st=qjonvfgj&raw=1" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+  </video>
+  <video controls>
+    <source src="https://www.dropbox.com/scl/fi/ufozne9adx1l9iyjpikuo/video4.mp4?rlkey=pder6e6mstpyhm34wt3zzcyp9&st=js6ebpv4&raw=1" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+            
       </video>
       
       
     </div>
   </section>
-   
+
   <div class="spacer"></div>
 
   <!-- Carrusel de Fotos -->
@@ -343,6 +348,16 @@
   
   <script>
 
+  // Esta función se llama cuando el estado del reproductor cambia (reproducción, pausa, etc.)
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+      console.log('El vídeo está reproduciéndose');
+      // Aquí puedes pausar la música u otras acciones
+    } else if (event.data == YT.PlayerState.PAUSED) {
+      console.log('El vídeo está en pausa');
+      // Aquí puedes reanudar la música o realizar otras acciones
+    }
+  }
     const playlist = [
     "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
     "rauw.mp3",
