@@ -447,6 +447,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxm ul {
@@ -466,8 +467,9 @@
 }
 
 .slider-boxm img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -476,6 +478,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxmay ul {
@@ -495,8 +498,9 @@
 }
 
 .slider-boxmay img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -534,6 +538,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxs ul {
@@ -553,8 +558,9 @@
 }
 
 .slider-boxs img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -684,14 +690,14 @@
   <div id="verification-modal">
     <div class="modal-content">
       <h2>Verificación</h2>
-      <p>Por favor, ingresa la contraseña para continuar:</p>
+      <p>Introduce la contraseña para continuar🩵:</p>
       <div>
         <input type="number" id="day" placeholder="DD" maxlength="2" />
         <input type="number" id="month" placeholder="MM" maxlength="2" />
         <input type="number" id="year" placeholder="AAAA" maxlength="4" />
       </div>
       <button onclick="verifyPassword()">Continuar</button>
-      <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.</p>
+      <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.😭</p>
     </div>
   </div> 
 
@@ -1229,10 +1235,11 @@ function changeImage(direction) {
   }, 500);
 }
 
-    const playlist = [
+    const playlist = [ 
     "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
     "rauw.mp3",
-    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3"  
+    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3",
+    "Luani - Oh Mi Amor (Video Oficial) [X1UQiwcdbzM].mp3"  
      ];
 
     let currentSongIndex = 0; // Índice de la canción actual
@@ -1259,13 +1266,16 @@ function changeImage(direction) {
   }
     // Evento para reproducir la siguiente canción al terminar la actual
     backgroundMusic.addEventListener('ended', () => {
-    currentSongIndex++;
-    if (currentSongIndex < playlist.length) {
-      playCurrentSong();
-    } else {
-      console.log("Playlist completada.");
-    }
-  });
+  currentSongIndex++;
+  if (currentSongIndex < playlist.length) {
+    playCurrentSong();
+  } else {
+    // Reinicia el playlist
+    currentSongIndex = 0;
+    playCurrentSong();
+    console.log("Reiniciando playlist...");
+  }
+});
     window.onload = function () {
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
