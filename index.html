@@ -394,6 +394,7 @@
   padding: 0;
   width: 1400%;
   animation: slide-14 45s infinite alternate ease-in-out;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxe li{
@@ -406,8 +407,9 @@
 }
 
 .slider-boxe img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px; /* Tamaño máximo para pantallas grandes */
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -662,6 +664,22 @@
   100% { margin-left: -1300%; }      /* Fin del ciclo */
 }
 
+@media (max-width: 768px) {
+  .slider-boxe ul {
+    flex-wrap: wrap; /* Permite que las imágenes pasen a otra fila si es necesario */
+    width: auto; /* Se ajusta automáticamente */
+    animation: none; /* Desactiva la animación para evitar el problema */
+  }
+
+  .slider-boxe li {
+    width: 50%; /* Dos imágenes por fila */
+  }
+
+  .slider-boxe img {
+    max-width: 100%; /* Escala la imagen al tamaño del contenedor */
+    height: auto;
+  }
+}
 
 @media(max-width:991px){
   body{
@@ -717,14 +735,39 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-    <iframe src="https://drive.google.com/file/d/1eenetEUPrsy5-4-DfO-Qkl-1-mQQ8-Wb/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1Evkr8ItRDNFaa7TKYQJ-rGxtW7UK40vE/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1-cP18nrfDtG3pBU1ET-K0hqTVa6mcNNm/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1fuEl_cMGF69ityKmCGgr85z8BQP4J_mN/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1J9TgR1obs9Zl5tA1Eogfxvo9uwkRGeJr/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1_sy_sAMLyueoRNdBtb8mDtylzTYtnxC5/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/15ciLZQAM6QRAC5RgHyO1SYD3JAkt_77l/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
-    <iframe src="https://drive.google.com/file/d/1PLu-1Gcla1r8Ea8e4sMSYXg8YukjM27u/preview" width="840" height="480" allow="autoplay" allowfullscreen></iframe>
+      <video width="640" height="360" controls>
+        <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/CUMPLEA%C3%91OS%20ANGELA.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+    </video>
+    <video width="640" height="360" controls>
+      <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/MES1.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+  </video>
+  <video width="640" height="360" controls>
+    <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/Video%20en%20saiko.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video4.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video5.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video6.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video7.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video8.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+
     
     </div>
   </section>
