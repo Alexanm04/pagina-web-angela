@@ -353,7 +353,324 @@
   right: 10px;
   transform: translateY(-50%);
 }
+.slider-box{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
 
+.slider-box ul {
+  display: flex;
+  padding: 0;
+  width: 300%;
+  animation: slide 15s infinite alternate ease-in-out;
+}
+
+.slider-box li{
+  width: 33.33%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-box img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxe{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxe ul {
+  display: flex;
+  padding: 0;
+  width: 1400%;
+  animation: slide-14 45s infinite alternate ease-in-out;
+}
+
+.slider-boxe li{
+  width: 7.14%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxe img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxf{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxf ul {
+  display: flex;
+  padding: 0;
+  width: 900%;
+  animation: slide-9 36s infinite alternate ease-in-out;
+}
+
+.slider-boxf li{
+  width: 11.11%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxf img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxm{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxm ul {
+  display: flex;
+  padding: 0;
+  width: 500%;
+  animation: slide-5 20s infinite alternate ease-in-out;
+}
+
+.slider-boxm li{
+  width: 20%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxm img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxmay{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxmay ul {
+  display: flex;
+  padding: 0;
+  width: 600%;
+  animation: slide-6 24s infinite alternate ease-in-out;
+}
+
+.slider-boxmay li{
+  width: 16.66%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxmay img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxj{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxj ul {
+  display: flex;
+  padding: 0;
+  width: 1000%;
+  animation: slide-10 40s infinite alternate ease-in-out;
+}
+
+.slider-boxj li{
+  width: 10%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxj img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxs{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxs ul {
+  display: flex;
+  padding: 0;
+  width: 1200%;
+  animation: slide-12 48s infinite alternate ease-in-out;
+}
+
+.slider-boxs li{
+  width: 8.33%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxs img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxd24{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxd24 ul {
+  display: flex;
+  padding: 0;
+  width: 100%;
+}
+
+.slider-boxd24 li{
+  width: 100%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxd24 img{
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+@keyframes slide {
+  0% {margin-left: 0;} /* Primera imagen */
+  50% {margin-left: -100%;} /* Detenida en la primera imagen */
+  100% {margin-left: -200%;} /* Detenida en la tercera imagen */
+}
+@keyframes slide-5 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  25% { margin-left: -100%; }           /* Mantener en la primera imagen */
+  50% { margin-left: -200%; }       /* Segunda imagen */
+  75% { margin-left: -300%; }       /* Tercera imagen */
+  100% { margin-left: -400%; }      /* Quinta imagen */
+}
+@keyframes slide-6 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  20% { margin-left: -100%; }    /* Segunda imagen */
+  40% { margin-left: -200%; }    /* Tercera imagen */
+  60% { margin-left: -300%; }       /* Cuarta imagen */
+  80% { margin-left: -400%; }    /* Quinta imagen */
+  100% { margin-left: -500%; }      /* Fin del ciclo */
+}
+@keyframes slide-9 {
+  0% { margin-left: 0; }           /* Primera imagen */
+  12.5% { margin-left: -100%; }      /* Mantener en la primera imagen */
+  25% { margin-left: -200%; }  /* Segunda imagen */
+  37.5% { margin-left: -300%; }  /* Tercera imagen */
+  50% { margin-left: -400%; }  /* Cuarta imagen */
+  62.5% { margin-left: -500%; }  /* Quinta imagen */
+  75% { margin-left: -600%; }  /* Sexta imagen */
+  87.5% { margin-left: -700%; }  /* Séptima imagen */
+  100% { margin-left: -800%; }    /* Novena imagen */
+}
+@keyframes slide-10 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  11.11% { margin-left: -100%; }    /* Segunda imagen */
+  22.22% { margin-left: -200%; }    /* Tercera imagen */
+  33.33% { margin-left: -300%; }    /* Cuarta imagen */
+  44.44% { margin-left: -400%; }    /* Quinta imagen */
+  55.55% { margin-left: -500%; }    /* Sexta imagen */
+  66.66% { margin-left: -600%; }    /* Séptima imagen */
+  77.77% { margin-left: -700%; }    /* Octava imagen */
+  88.88% { margin-left: -800%; }    /* Novena imagen */
+  100% { margin-left: -900%; }      /* Fin del ciclo */
+}
+@keyframes slide-12 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  9.09% { margin-left: -100%; }     /* Segunda imagen */
+  18.18% { margin-left: -200%; }    /* Tercera imagen */
+  27.27% { margin-left: -300%; }    /* Cuarta imagen */
+  36.36% { margin-left: -400%; }    /* Quinta imagen */
+  45.45% { margin-left: -500%; }    /* Sexta imagen */
+  54.54% { margin-left: -600%; }    /* Séptima imagen */
+  63.63% { margin-left: -700%; }    /* Octava imagen */
+  72.72% { margin-left: -800%; }    /* Novena imagen */
+  81.81% { margin-left: -900%; }    /* Décima imagen */
+  90.9% { margin-left: -1000%; }    /* Undécima imagen */
+  100% { margin-left: -1100%; }     /* Fin del ciclo */
+}
+
+@keyframes slide-14 {
+  0% { margin-left: 0; }             /* Primera imagen */
+  7.69% { margin-left: -100%; }      /* Segunda imagen */
+  15.38% { margin-left: -200%; }     /* Tercera imagen */
+  23.07% { margin-left: -300%; }     /* Cuarta imagen */
+  30.77% { margin-left: -400%; }     /* Quinta imagen */
+  38.46% { margin-left: -500%; }     /* Sexta imagen */
+  46.15% { margin-left: -600%; }     /* Séptima imagen */
+  53.84% { margin-left: -700%; }     /* Octava imagen */
+  61.53% { margin-left: -800%; }     /* Novena imagen */
+  69.23% { margin-left: -900%; }     /* Décima imagen */
+  76.92% { margin-left: -1000%; }    /* Undécima imagen */
+  84.61% { margin-left: -1100%; }    /* Duodécima imagen */
+  92.3% { margin-left: -1200%; }     /* Decimotercera imagen */
+  100% { margin-left: -1300%; }      /* Fin del ciclo */
+}
+
+
+@media(max-width:991px){
+  body{
+    padding: 30px;
+  }
+  .slider-box{
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -401,7 +718,7 @@
     <h2>Videos destacados</h2>
     <div class="carousel-container">
         <video controls>
-          <source src="https://www.dropbox.com/scl/fi/yvyqsgm4dlmcod5f1w0kh/MES1.mp4?rlkey=etunq90eep14zpvhj65dypw89&st=cmaljwxe&raw=1" type="video/mp4">
+          <source src="MES1.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
       </video>
       <video controls>
@@ -440,10 +757,18 @@
           <div class="month">
             <button class="toggle-month" onclick="toggleVisibility('december2023')">Diciembre</button>
             <div class="photo-container" id="december2023" style="display: none;">
-              <div class="carousel-container">
-                <img src="d123.jpg" alt="Foto 1 diciembre 2023" class="photo" onclick="openModal(this)">
-                <img src="d223.jpg" alt="Foto 2 diciembre 2023" class="photo" onclick="openModal(this)">
-                <img src="d323.jpg" alt="Foto 3 diciembre 2023" class="photo" onclick="openModal(this)">
+              <div class="slider-box">
+                <ul>
+                  <li>
+                    <img src="d123.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="d223.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="d323.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -458,108 +783,385 @@
             <button class="toggle-month" onclick="toggleVisibility('january2024')">Enero</button>
             <div class="photo-container" id="january2024" style="display: none;">
               <div class="carousel-container">
-                <img src="e124.jpg" alt="Foto 1 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e224.jpg" alt="Foto 2 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e324.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e424.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e524.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e624.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e724.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e824.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e924.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e1024.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e1124.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e1224.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e1324.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
-                <img src="e1424.jpg" alt="Foto 3 enero 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxe">
+                  <ul>
+                    <li>
+                      <img src="e124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e624.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e724.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e824.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e924.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e1024.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e1124.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e1224.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e1324.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="e1424.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('february2024')">Febrero</button>
             <div class="photo-container" id="february2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 febrero 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 febrero 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 febrero 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxf">
+                  <ul>
+                    <li>
+                      <img src="f124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f624.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f724.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f824.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="f924.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('march2024')">Marzo</button>
             <div class="photo-container" id="march2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 marzo 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 marzo 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 marzo 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxm">
+                  <ul>
+                    <li>
+                      <img src="m124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="m224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="m324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="m424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="m524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('april2024')">Abril</button>
             <div class="photo-container" id="april2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 abril 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 abril 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 abril 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxm">
+                  <ul>
+                    <li>
+                      <img src="a124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="a224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="a324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="a424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="a524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('may2024')">Mayo</button>
             <div class="photo-container" id="may2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 mayo 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 mayo 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 mayo 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxmay">
+                  <ul>
+                    <li>
+                      <img src="may124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="may224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="may324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="may424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="may524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="may624.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('june2024')">Junio</button>
             <div class="photo-container" id="june2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 junio 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 junio 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 junio 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxj">
+                  <ul>
+                    <li>
+                      <img src="j124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j624.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j724.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j824.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j924.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="j1024.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('july2024')">Julio</button>
             <div class="photo-container" id="july2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_enero2024.jpg" alt="Foto 1 julio 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_enero2024.jpg" alt="Foto 2 julio 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_enero2024.jpg" alt="Foto 3 julio 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxf">
+                  <ul>
+                    <li>
+                      <img src="jul124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul624.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul724.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul824.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="jul924.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
-      
+            </div>
             <button class="toggle-month" onclick="toggleVisibility('august2024')">Agosto</button>
             <div class="photo-container" id="august2024" style="display: none;">
               <div class="carousel-container">
-                <img src="foto1_agosto2024.jpg" alt="Foto 1 agosto 2024" class="photo" onclick="openModal(this)">
-                <img src="foto2_agosto2024.jpg" alt="Foto 2 agosto 2024" class="photo" onclick="openModal(this)">
-                <img src="foto3_agosto2024.jpg" alt="Foto 3 agosto 2024" class="photo" onclick="openModal(this)">
+                <div class="slider-boxf">
+                  <ul>
+                    <li>
+                      <img src="aug124.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug224.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug324.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug424.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug524.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug624.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug724.jpg" alt="Foto 1 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug824.jpg" alt="Foto 2 diciembre 2023">
+                    </li>
+                    <li>
+                      <img src="aug924.jpg" alt="Foto 3 diciembre 2023">
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button class="toggle-month" onclick="toggleVisibility('september2024')">Septiembre</button>
           <div class="photo-container" id="september2024" style="display: none;">
             <div class="carousel-container">
-              <img src="foto1_septiembre2024.jpg" alt="Foto 1 septiembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto2_septiembre2024.jpg" alt="Foto 2 septiembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto3_septiembre2024.jpg" alt="Foto 3 septiembre 2024" class="photo" onclick="openModal(this)">
+              <div class="slider-boxs">
+                <ul>
+                  <li>
+                    <img src="s124.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s224.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s324.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s424.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s524.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s624.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s724.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s824.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s924.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s1024.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s1124.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="s1224.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <button class="toggle-month" onclick="toggleVisibility('october2024')">Octubre</button>
           <div class="photo-container" id="october2024" style="display: none;">
             <div class="carousel-container">
-              <img src="foto1_octubre2024.jpg" alt="Foto 1 octubre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto2_octubre2024.jpg" alt="Foto 2 octubre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto3_octubre2024.jpg" alt="Foto 3 octubre 2024" class="photo" onclick="openModal(this)">
+              <div class="slider-boxf">
+                <ul>
+                  <li>
+                    <img src="o124.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o224.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o324.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o424.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o524.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o624.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o724.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o824.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="o924.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <button class="toggle-month" onclick="toggleVisibility('november2024')">Noviembre</button>
           <div class="photo-container" id="november2024" style="display: none;">
             <div class="carousel-container">
-              <img src="foto1_noviembre2024.jpg" alt="Foto 1 noviembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto2_noviembre2024.jpg" alt="Foto 2 noviembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto3_noviembre2024.jpg" alt="Foto 3 noviembre 2024" class="photo" onclick="openModal(this)">
+              <div class="slider-box">
+                <ul>
+                  <li>
+                    <img src="n124.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="n224.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="n324.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <button class="toggle-month" onclick="toggleVisibility('december2024')">Diciembre</button>
           <div class="photo-container" id="december2024" style="display: none;">
             <div class="carousel-container">
-              <img src="foto1_diciembre2024.jpg" alt="Foto 1 diciembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto2_diciembre2024.jpg" alt="Foto 2 diciembre 2024" class="photo" onclick="openModal(this)">
-              <img src="foto3_diciembre2024.jpg" alt="Foto 3 diciembre 2024" class="photo" onclick="openModal(this)">
+              <div class="slider-boxd24">
+                <ul>
+                  <li>
+                    <img src="d124.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -569,17 +1171,21 @@
   </section>
   
   <!-- Modal para la foto a pantalla completa -->
-  <div id="photoModal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">X</span>
+  <div id="photo-carousel" class="modal">
+    <!--<span class="close" onclick="closeModal()">X</span>-->
     <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-    <img class="modal-content" id="modalImage">
+    <img  id="modalImage" src="d123.jpg" alt="Imagen carrusel">
     <button class="next" onclick="changeImage(1)">&#10095;</button>
   </div>
 
   <audio id="background-music" src="" autoplay></audio>
   
   <script>
-    let images=[];
+    const images=[
+      "d123.jpg",
+      "d223.jpg",
+      "d323.jpg"
+    ];
     let currentIndex=0;
   // Función para abrir la imagen en pantalla completa
   function openModal(imgElement) {
@@ -599,19 +1205,17 @@ function closeModal() {
 }
 
 // Función para cambiar de imagen (anterior o siguiente)
-function changeImage(direction, event) {
-  // Evitar que el clic en las flechas cierre el modal
-  event.stopPropagation();
-  
-  // Cambiar el índice de la imagen actual
-  currentImageIndex += direction;
+function changeImage(direction) {
+  // Calcular el nuevo índice
+  currentIndex = (currentIndex + direction + images.length) % images.length;
 
-  // Asegurarse de que no nos salgamos de los límites del arreglo de imágenes
-  if (currentImageIndex < 0) currentImageIndex = images.length - 1;
-  if (currentImageIndex >= images.length) currentImageIndex = 0;
-
-  // Actualizar la imagen mostrada en el modal
-  document.getElementById('modalImage').src = images[currentImageIndex].src;
+  // Cambiar la imagen del carrusel
+  const carouselImage = document.getElementById("carousel-image");
+  carouselImage.style.opacity = 0; // Efecto de transición
+  setTimeout(() => {
+    carouselImage.src = images[currentIndex];
+    carouselImage.style.opacity = 1;
+  }, 500);
 }
 
     const playlist = [
