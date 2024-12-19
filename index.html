@@ -569,19 +569,18 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxd24 ul {
   display: flex;
   padding: 0;
-  width: 100%;
+  width: 400%;
+  animation: slide-4 16s infinite alternate ease-in-out;
 }
 
 .slider-boxd24 li{
-  width: 100%;
+  width: 25%;
   list-style: none;
   position: relative;
   display: flex;
@@ -590,8 +589,9 @@
 }
 
 .slider-boxd24 img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -599,6 +599,12 @@
   0% {margin-left: 0;} /* Primera imagen */
   50% {margin-left: -100%;} /* Detenida en la primera imagen */
   100% {margin-left: -200%;} /* Detenida en la tercera imagen */
+}
+@keyframes slide-4 {
+  0% {margin-left: 0;} /* Primera imagen */
+  33.33% {margin-left: -100%;} /* Detenida en la primera imagen */
+  66.66% {margin-left: -200%;} /* Detenida en la tercera imagen */
+  100% {margin-left: -300%;} /* Detenida en la tercera imagen */
 }
 @keyframes slide-5 {
   0% { margin-left: 0; }            /* Primera imagen */
@@ -757,7 +763,10 @@
   <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video8.mp4" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
 </video>
-
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/video9.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
     
     </div>
   </section>
@@ -1154,7 +1163,7 @@
           <button class="toggle-month" onclick="toggleVisibility('november2024')">Noviembre</button>
           <div class="photo-container" id="november2024" style="display: none;">
             <div class="carousel-container">
-              <div class="slider-box">
+              <div class="slider4-box">
                 <ul>
                   <li>
                     <img src="n124.jpg" alt="Foto 1 diciembre 2023">
@@ -1176,6 +1185,15 @@
                 <ul>
                   <li>
                     <img src="d124.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="d224.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="d324.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="d424.jpg" alt="Foto 1 diciembre 2023">
                   </li>
                 </ul>
               </div>
