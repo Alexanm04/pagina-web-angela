@@ -122,7 +122,7 @@
   margin-top: 50px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease, visibility 0s 1s;
+  /*transition: opacity 1s ease, visibility 0s 1s;*/
   color: white; /* Asegura que el texto sea visible */
 }
 
@@ -394,6 +394,7 @@
   padding: 0;
   width: 1400%;
   animation: slide-14 45s infinite alternate ease-in-out;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxe li{
@@ -406,8 +407,9 @@
 }
 
 .slider-boxe img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px; /* Tamaño máximo para pantallas grandes */
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -445,6 +447,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxm ul {
@@ -464,8 +467,9 @@
 }
 
 .slider-boxm img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -474,6 +478,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxmay ul {
@@ -493,8 +498,9 @@
 }
 
 .slider-boxmay img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -532,6 +538,7 @@
   height: auto;
   margin: 20px auto 0;
   overflow: hidden;
+  flex-wrap: nowrap; /* Mantiene todo en una sola línea */
 }
 
 .slider-boxs ul {
@@ -551,8 +558,9 @@
 }
 
 .slider-boxs img{
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -682,14 +690,14 @@
   <div id="verification-modal">
     <div class="modal-content">
       <h2>Verificación</h2>
-      <p>Por favor, ingresa la contraseña para continuar:</p>
+      <p>Introduce la contraseña para continuar🩵:</p>
       <div>
         <input type="number" id="day" placeholder="DD" maxlength="2" />
         <input type="number" id="month" placeholder="MM" maxlength="2" />
         <input type="number" id="year" placeholder="AAAA" maxlength="4" />
       </div>
       <button onclick="verifyPassword()">Continuar</button>
-      <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.</p>
+      <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Inténtalo de nuevo.😭</p>
     </div>
   </div> 
 
@@ -706,7 +714,7 @@
   <!-- Banner -->
   <div id="banner" class="banner">
     <div>
-      <h1>Bienvenida, Angelita 🩵</h1>
+      <h1><br><br><br>Bienvenida, Angelita 🩵</h1>
       <p>Explora tus recuerdos favoritos aquí</p>
     </div>
   </div>
@@ -717,31 +725,40 @@
   <section id="videos" class="carousel">
     <h2>Videos destacados</h2>
     <div class="carousel-container">
-        <video controls>
-          <source src="MES1.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-      </video>
-      <video controls>
-        <source src="https://www.dropbox.com/scl/fi/kt714aijpxk0hk4mkv980/Video-en-saiko.mp4?rlkey=3fqz39vd6kbpxpmk8rjipr2i2&st=qbgu0q6b&raw=1" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
+      <video width="640" height="360" controls>
+        <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/CUMPLEA%C3%91OS%20ANGELA.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
     </video>
-    <video controls>
-      <source src="https://www.dropbox.com/scl/fi/voqr162cwh6ajatphuz8b/CUMPLEA-OS-ANGELA.mp4?rlkey=uymcyhg6fzrd3hdbibc7cqfmm&st=qjonvfgj&raw=1" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
+    <video width="640" height="360" controls>
+      <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/MES1.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
   </video>
-  <video controls>
-    <source src="https://www.dropbox.com/scl/fi/ufozne9adx1l9iyjpikuo/video4.mp4?rlkey=pder6e6mstpyhm34wt3zzcyp9&st=js6ebpv4&raw=1" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
+  <video width="640" height="360" controls>
+    <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/Video%20en%20saiko.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
 </video>
-<video controls>
-  <source src="https://www.dropbox.com/scl/fi/muau7d6v0yoah5r3fgjcw/video5.mp4?rlkey=4pbts7adtqc73se81u9zkr2pw&st=9liwmet3&raw=1" type="video/mp4">
-  Tu navegador no soporta el elemento de video.
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video4.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
 </video>
-<video controls>
-  <source src="https://www.dropbox.com/scl/fi/xekwxcdgqbmssfqkkgklx/video6.mp4?rlkey=v6196hb2yhe0jpu9bwxr5v294&st=lxyuaij4&raw=1" type="video/mp4">
-  Tu navegador no soporta el elemento de video.
-</video>       
-      </video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video5.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video6.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video7.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/media/video8.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+
+    
     </div>
   </section>
 
@@ -1218,10 +1235,13 @@ function changeImage(direction) {
   }, 500);
 }
 
-    const playlist = [
+    const playlist = [ 
+    "Grabación (3).mp3",
     "Saiko - Feliz Navidad (Visualizer) _ Saliendo del Planeta.mp3", 
     "rauw.mp3",
-    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3"  
+    "Rels B, J Abecia - Te Regalo (Audio Oficial) [YNqug5jirKc].mp3",
+    "Saiko - COSAS QUE NO TE DIJE (Official Video).mp3",
+    "Luani - Oh Mi Amor (Video Oficial) [X1UQiwcdbzM].mp3"  
      ];
 
     let currentSongIndex = 0; // Índice de la canción actual
@@ -1248,20 +1268,23 @@ function changeImage(direction) {
   }
     // Evento para reproducir la siguiente canción al terminar la actual
     backgroundMusic.addEventListener('ended', () => {
-    currentSongIndex++;
-    if (currentSongIndex < playlist.length) {
-      playCurrentSong();
-    } else {
-      console.log("Playlist completada.");
-    }
-  });
+  currentSongIndex++;
+  if (currentSongIndex < playlist.length) {
+    playCurrentSong();
+  } else {
+    // Reinicia el playlist
+    currentSongIndex = 0;
+    playCurrentSong();
+    console.log("Reiniciando playlist...");
+  }
+});
     window.onload = function () {
       const animationContainer = document.getElementById('animation-container');
       const verificationModal = document.getElementById('verification-modal');
       const backgroundMusic = document.getElementById('background-music'); // Referencia al audio
       //const iframes = document.querySelectorAll('iframe');
       const videos=document.querySelectorAll('.carousel-container video');
-      backgroundMusic.volume = 0.6;
+      backgroundMusic.volume = 0.3;
       
       setTimeout(() => {
         animationContainer.style.display = 'none';
