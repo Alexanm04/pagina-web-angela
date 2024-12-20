@@ -162,23 +162,52 @@
 
 .year button, .month button {
   width: 100%;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
+  padding: 15px; /* Más espacio para un diseño más cómodo */
+  background: linear-gradient(135deg, #4a90e2, #9013fe); /* Fondo degradado moderno */
+  color: #fff; /* Texto en blanco */
   border: none;
-  text-align: left;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 8px; /* Bordes redondeados */
+  text-align: left; /* Alineación del texto a la izquierda */
+  font-size: 1.2rem; /* Tamaño de fuente cómodo */
+  font-family: 'Arial', sans-serif; /* Cambia la fuente */
+  font-weight: bold; /* Resalta el texto */
+  cursor: pointer; /* Muestra el cursor de clic */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  transition: transform 0.2s, box-shadow 0.3s; /* Transición suave en efectos */
 }
 
 .year button:hover, .month button:hover {
-  background-color: #555;
+  background: linear-gradient(135deg, #9013fe, #4a90e2); /* Cambia el degradado al pasar */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica la sombra */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+.year button:active, .month button:active {
+  background: #3a73c2; /* Color sólido al hacer clic */
+  transform: translateY(1px); /* Sutil efecto de "presionar" */
 }
 .month-container {
   margin-left: 20px;
-}
+padding: 15px; /* Espaciado interno para un mejor diseño */
+background-color: #85C1E9; /* Fondo azul clarito */
+border-radius: 10px; /* Bordes redondeados */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+color: #fff; /* Texto en blanco para contrastar con el fondo */
+font-family: 'Arial', sans-serif; /* Cambia el estilo de la fuente */
+font-size: 1.2em; /* Tamaño de texto ligeramente más grande */
+display: flex; /* Flexbox para alinear el contenido */
+align-items: center; /* Alinear verticalmente el contenido */
+gap: 10px; /* Espaciado entre elementos */
+cursor: pointer; /* Cambiar el cursor al pasar por encima */
+transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
 
+}
+.month-container:hover {
+  transform: scale(1.05); /* Ampliar ligeramente al pasar el mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Intensificar la sombra */
+}
+.month-container span {
+  font-weight: bold; /* Resalta el texto */
+}
 .photo-container {
   display: flex;
   flex-wrap: wrap;
@@ -393,8 +422,8 @@
 .slider-boxe ul {
   display: flex;
   padding: 0;
-  width: 900%;
-  animation: slide-14 56s infinite alternate ease-in-out;
+  width: 1400%;
+  animation: slide-14 45s infinite alternate ease-in-out;
 }
 
 .slider-boxe li{
