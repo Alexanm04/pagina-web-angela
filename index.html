@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -632,6 +632,102 @@
   object-fit: contain;
   border-radius: 5px;
 }
+
+.slider-boxf25{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxf25 ul {
+  display: flex;
+  padding: 0;
+  width: 900%;
+  animation: slide-7 28s infinite alternate ease-in-out;
+}
+
+.slider-boxf25 li{
+  width: 11.11%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxf25 img{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.slider-boxm25{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxm25 ul {
+  display: flex;
+  padding: 0;
+  width: 900%;
+  animation: slide-2 8s infinite alternate ease-in-out;
+}
+
+.slider-boxm25 li{
+  width: 11.11%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxm25 img{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.slider-boxmay25{
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.slider-boxmay25 ul {
+  display: flex;
+  padding: 0;
+  width: 1700%;
+  animation: slide-17 68s infinite alternate ease-in-out;
+}
+
+.slider-boxmay25 li{
+  width: 5.88%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-boxmay25 img{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+@keyframes slide-2 {
+  0% {margin-left: 0;} /* Primera imagen */
+  100% {margin-left: -100%;} /* Detenida en la primera imagen */
+}
 @keyframes slide {
   0% {margin-left: 0;} /* Primera imagen */
   50% {margin-left: -100%;} /* Detenida en la primera imagen */
@@ -657,6 +753,27 @@
   60% { margin-left: -300%; }       /* Cuarta imagen */
   80% { margin-left: -400%; }    /* Quinta imagen */
   100% { margin-left: -500%; }      /* Fin del ciclo */
+}
+@keyframes slide-7 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  16.66% { margin-left: -100%; }    /* Segunda imagen */
+  33.22% { margin-left: -200%; }    /* Tercera imagen */
+  49.88% { margin-left: -300%; }       /* Cuarta imagen */
+  66.44% { margin-left: -400%; }    /* Quinta imagen */
+  83% { margin-left: -500%; }      /* Fin del ciclo */
+  100% { margin-left: -600%; }
+}
+@keyframes slide-8 {
+  0% { margin-left: 0; }            /* Primera imagen */
+  11.11% { margin-left: -100%; }    /* Segunda imagen */
+  22.22% { margin-left: -200%; }    /* Tercera imagen */
+  33.33% { margin-left: -300%; }       /* Cuarta imagen */
+  44.44% { margin-left: -400%; }    /* Quinta imagen */
+  55.55% { margin-left: -500%; }      /* Fin del ciclo */
+  66.66% { margin-left: -600%; }
+  77.77% {margin-left: -700%;}
+  88.88% {margin-left: -800%;}
+  100% {margin-left: -900%;}
 }
 @keyframes slide-9 {
   0% { margin-left: 0; }           /* Primera imagen */
@@ -713,6 +830,25 @@
   100% { margin-left: -1300%; }      /* Fin del ciclo */
 }
 
+@keyframes slide-17 {
+  0% { margin-left: 0; }             /* Primera imagen */
+  6.25% { margin-left: -100%; }      /* Segunda imagen */
+  12.50% { margin-left: -200%; }     /* Tercera imagen */
+  18.75% { margin-left: -300%; }     /* Cuarta imagen */
+  25% { margin-left: -400%; }     /* Quinta imagen */
+  31.25% { margin-left: -500%; }     /* Sexta imagen */
+  37.50% { margin-left: -600%; }     /* Séptima imagen */
+  43.75% { margin-left: -700%; }     /* Octava imagen */
+  50% { margin-left: -800%; }     /* Novena imagen */
+  56.25% { margin-left: -900%; }     /* Décima imagen */
+  62.50% { margin-left: -1000%; }    /* Undécima imagen */
+  68.75% { margin-left: -1100%; }    /* Duodécima imagen */
+  75% { margin-left: -1200%; }     /* Decimotercera imagen */
+  81.25% { margin-left: -1300%; }      /* Fin del ciclo */
+  87.50% { margin-left: -1400%; }     /* Décima imagen */
+  93.75% { margin-left: -1500%; }    /* Undécima imagen */
+  100% { margin-left: -1600%; }    /* Duodécima imagen */
+}
 
 @media(max-width:991px){
   body{
@@ -823,7 +959,23 @@
 <video width="640" height="360" controls>
   <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/1ANOANGELA.mp4" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
-</video>     
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/video10.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/video11.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/video12.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<video width="640" height="360" controls>
+  <source src="https://github.com/Alexanm04/pagina-web-angela/raw/refs/heads/main/video13.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>           
     </div>
   </section>
 
@@ -1291,7 +1443,7 @@
           <button class="toggle-month" onclick="toggleVisibility('february2025')">Febrero</button>
           <div class="photo-container" id="february2025" style="display: none;">
             <div class="carousel-container">
-              <div class="slider-boxd24">
+              <div class="slider-boxf25">
                 <ul>
                   <li>
                     <img src="f125.jpg" alt="Foto 1 diciembre 2023">
@@ -1305,11 +1457,191 @@
                   <li>
                     <img src="f425.jpg" alt="Foto 3 diciembre 2023">
                   </li>
+                  <li>
+                    <img src="f525.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="f625.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="f725.jpg" alt="Foto 3 diciembre 2023">
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+         <button class="toggle-month" onclick="toggleVisibility('march2025')">Marzo</button>
+          <div class="photo-container" id="march2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxm25">
+                <ul>
+                  <li>
+                    <img src="m125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="m225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('april2025')">Abril</button>
+          <div class="photo-container" id="april2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxm25">
+                <ul>
+                  <li>
+                    <img src="a125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="a225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> 
+          <button class="toggle-month" onclick="toggleVisibility('may2025')">Mayo</button>
+          <div class="photo-container" id="may2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxmay25">
+                <ul>
+                  <li>
+                    <img src="may125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may325.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may425.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may525.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may625.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may725.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may825.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may925.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1025.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1325.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1425.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1525.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1625.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="may1725.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('june2025')">Junio</button>
+          <div class="photo-container" id="june2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxd24">
+                <ul>
+                  <li>
+                    <img src="j125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="j225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="j325.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="j425.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('july2025')">Julio</button>
+          <div class="photo-container" id="july2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxj">
+                <ul>
+                  <li>
+                    <img src="jul125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul325.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul425.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul525.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul625.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul725.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul825.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul925.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="jul1025.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="toggle-month" onclick="toggleVisibility('august2025')">Agosto</button>
+          <div class="photo-container" id="august2025" style="display: none;">
+            <div class="carousel-container">
+              <div class="slider-boxd24">
+                <ul>
+                  <li>
+                    <img src="aug125.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="aug225.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="aug325.jpg" alt="Foto 1 diciembre 2023">
+                  </li>
+                  <li>
+                    <img src="aug425.jpg" alt="Foto 2 diciembre 2023">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>   
       </div>
     </div>
   </section>
